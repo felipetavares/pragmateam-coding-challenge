@@ -22,6 +22,8 @@ in the future: if for example we need to send SMS notifications when beers are
 in the incorrect temperature, we would need to write new tests for that as the
 logic would not be in the same place.
 
+![business-logic-decoupling](https://user-images.githubusercontent.com/2183824/119279601-1c42dd80-bc03-11eb-9212-a5ee44b45da3.png)
+
 ## Single-component design 
 
 The original code has a single component in the front-end which takes care of
