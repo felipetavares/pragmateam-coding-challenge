@@ -27,6 +27,6 @@ describe('<Header />', () => {
         const {getByRole} = render(<Header title={title} />);
 
         expect(getByRole('banner')).toBeTruthy();
-    })
+    });
 });
 
