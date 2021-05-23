@@ -46,10 +46,10 @@ addition or removal of products requires a new version of the front-end.
 The reason these two types of testing take a lower priority over the ones I
 implemented is that the issues are much easier to catch. If the APIs are not
 working correctly, the app probably not work at all. Of course, ideally one
-would also add testing for those cases, but consider the case where the app
-works, but display the incorrect data. This will be harder to catch and has a
+would also add testing for those cases. Now, consider the case where the app
+works, but display the incorrect data: this will be harder to catch and has a
 higher chance of being deployed to production, hence, writing tests that avoid
-theses cases is always the first priority.
+it has higher priority.
 
 # Available scripts
 
