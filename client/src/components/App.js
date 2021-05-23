@@ -14,7 +14,7 @@ function App() {
                   fetch(`http://localhost:8081/temperature/${id}`)
                       .then((response) => response.json())
                       .then((response) =>
-                          setItems((prevItems) => ({
+                          setTemperatures((prevItems) => ({
                               ...prevItems, [id]: response,
                           }))
                       );
@@ -25,16 +25,12 @@ function App() {
         fetchProductTemperatures();
     }, []);
 
-    const table = {
-        hello: { name: 'Beer 1', temperature: 15, status: 0 }
-    };
-
     return (
         <>
             <Header title="SensorTech" />
             <div className="App">
                 <h2>Beers</h2>
-                <TemperatureTable table={table} />
+                <TemperatureTable table={temperatures} />
             </div>
         </>
     );
