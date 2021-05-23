@@ -1,5 +1,4 @@
 const express = require('express');
-const fetch = require('node-fetch');
 const cors = require('cors');
 
 const {checkTemperatureForProduct} = require('./temperature');
@@ -19,7 +18,7 @@ app.get('/temperature/:id', async (req, res) => {
     id: id,
     name: productNames[id],
     temperature: sensorData.temperature,
-    status: statusForProduct(id, sensorData.temperature)
+    status: checkTemperatureForProduct(id, sensorData.temperature)
   });
 });
 
