@@ -4,7 +4,8 @@
   "description": "Pragmateam code challenge",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "npx mocha --reporter spec"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
   }
 }
