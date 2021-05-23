@@ -2,23 +2,18 @@
 
 ## Client-side logic
 
-### The issue with client-side business logic
-
-The main issue with the original code is that it relies on a client-side
+The main issue with the original code is that it relies on a *client-side*
 implementation of a validation logic. This is not an issue for small
 single-purpose apps, because in the end the logic will still be in one place.
+
 However, as an application grows in size and starts to have multiple front-ends
 and multiple places that requires the usage of the same logic, it leads to
-multiple sources of truth and code duplication.
-
-In the case of this app, this could be, for example:
+multiple sources of truth and code duplication. This could be, for example:
 
 - having to send SMS notifications for beers outside the correct temperature
   range;
 - having a phone app to monitor the temperatures;
 - having to log time outside correct range to a database;
-
-### How it affects testing
 
 And more importantly for our task, this not only makes testing the business
 logic harder, because it's not separated from the rendering/viewing logic but
@@ -40,15 +35,31 @@ testing everything end-to-end (which is not robust because presentation might
 change). End-to-end tests have their value, but unit tests of individual
 functionality are also important.
 
-## Available scripts
+# Future Work
 
-### Root
+1. End-to-end testing of the rendering code.
+2. API endpoint testing/contract testing.
+3. Presently, the client side code needs to know all the products for which it
+will need to request data. This should be in the server, because otherwise any
+addition or removal of products requires a new version of the front-end.
+
+The reason these two types of testing take a lower priority over the ones I
+implemented is that they are much easier to catch. If the APIs are not working
+correctly, the app probably not work at all. Of course, ideally one would also
+add testing for those cases, but consider the case where the app works, but
+display the incorrect data. This will be harder to catch and has a higher chance
+of being deployed to production, hence, writing tests that avoid theses cases
+is always the first priority.
+
+# Available scripts
+
+## Root
 - `npm install` - Installs dependencies client and server apps
 - `npm start` - Runs client and server apps
 
-### Client
+## Client
 - `npm start` - Start the application (Port 3000)
 - `npm test` - Runs available tests
 
-### Server
+## Server
 - `npm start` - Start the application (Port 8081)
