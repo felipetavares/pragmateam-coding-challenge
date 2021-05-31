@@ -5,4 +5,5 @@ module.exports = {
     4: {minimum: 6, maximum: 8},
     5: {minimum: 3, maximum: 5},
     6: {minimum: 4, maximum: 6},
+    7: {maximum: 15}
 };

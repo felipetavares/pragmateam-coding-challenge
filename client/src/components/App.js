@@ -5,24 +5,13 @@ import TemperatureTable from './TemperatureTable';
 // TODO: fetch list of products from the server
 const products = [1, 2, 3, 4, 5, 6];
 
-function App() {
-    const [temperatures, setTemperatures] = useState({});
+function App({fetchInformation}) {
+    const [state, setState] = useState({});
 
     useEffect(() => {
-        const fetchProductTemperatures = () =>
-              products.forEach(id => {
-                  fetch(`http://localhost:8081/temperature/${id}`)
-                      .then((response) => response.json())
-                      .then((response) =>
-                          setTemperatures((prevItems) => ({
-                              ...prevItems, [id]: response,
-                          }))
-                      );
-              });
+        setInterval(fetchInformation, 5000);
 
-        setInterval(fetchProductTemperatures, 5000);
-
-        fetchProductTemperatures();
+        fetchInformation();
     }, []);
 
     return (
