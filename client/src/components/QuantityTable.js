@@ -1,3 +1,5 @@
+// { quantities:  }
+
 export default function QuantityTable({table}) {
     const statuses = {
         [+1]: 'too high',

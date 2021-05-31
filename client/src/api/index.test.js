@@ -11,6 +11,6 @@ describe('', () => {
     });
 
     it('', () => {
-        parseProductInfo(json);
+        fetchInformation();
     });
 });
